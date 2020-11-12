@@ -1,15 +1,18 @@
+org: gymnasium
+app: marusia
 service: marusia-skill-echo-python
 
 plugins:
   - serverless-offline
 
 custom:
-  stage: ${opt:stage, self:provider.defaultStage}
+  stage: ${self:provider.stage}
 
 provider:
   name: aws
   runtime: python3.8
-  defaultStage: production
+  apiGateway:
+    shouldStartNameWithService: true
 
 functions:
   webhook:
