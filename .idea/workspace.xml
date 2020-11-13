@@ -20,6 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dbf0a5dd-14d6-450c-892d-1a07a785681f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/upr.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/marusia-skill-echo-python.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/marusia-skill-echo-python.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/handler.py" afterDir="false" />
     </list>
@@ -31,7 +35,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="54debd00-e0c2-489d-855d-bc37fe278bde" />
+  <component name="JupyterTrust" id="e0bee9ce-489d-452f-ac34-9b667fef0f5b" />
   <component name="ProjectId" id="1k6cK7FF5Yz8ulPq3brAtcfJfEl" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -40,6 +44,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -82,6 +87,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="702" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605264630979">
+      <screen x="0" y="23" width="1920" height="987" />
+    </state>
+    <state x="702" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1920.987@0.23.1920.987" timestamp="1605264630979" />
     <state x="93" y="93" width="1350" height="678" key="DiffContextDialog" timestamp="1605256852342">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -94,5 +103,8 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="431" y="181" width="672" height="678" key="search.everywhere.popup/0.0.1536.864@0.0.1536.864" timestamp="1605250392605" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/marusia_skill_echo_python$handler.coverage" NAME="handler Coverage Results" MODIFIED="1605261998213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
