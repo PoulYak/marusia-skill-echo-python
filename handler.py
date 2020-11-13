@@ -81,7 +81,7 @@ def handler_function(req_mess):
 def button(title):
     return {"title": title}
 
-<<<<<<< HEAD
+
 def stupid(word_list):
     if 'как' in word_list and 'делать' in word_list:
         return True
@@ -92,7 +92,7 @@ def next(word_list):
     if "следующее" in word_list or "следующий" in word_list or "следующая" in word_list or "сделал" in word_list or "сделала" in word_list or "сделали" in word_list or "готов" in word_list or "готовы" in word_list or "готовим" in word_list or "готова" in word_list or "готово" in word_list or "всё":
         return True
     return False
-=======
+
 
 def check_user(user_id):
     with open('users_id.txt') as fin:
@@ -104,5 +104,3 @@ def check_user(user_id):
             print(user_id, file = fout)
         return False
 
-
->>>>>>> test
