@@ -39,11 +39,15 @@ def handler_function(req_mess):
             "tts": message,
             "buttons": buttons,
             "end_session": end_session
-        },
+            },  
         "session": {derived_key: req_mess['session'][derived_key] for derived_key in
                     ['session_id', 'user_id', 'message_id']},
         "version": req_mess['version']
     }
+
+    user_id = response_message["session"]["user_id"]
+    check_user(user_id)
+
     print(response_message)
     return response_message
 
@@ -54,7 +58,7 @@ def button(title):
 
 def check_user(user_id):
     with open('users_id.txt') as fin:
-        users_id = list(fin.readlines())
+        users_id = fin.readlines()
 
     if user_id in users_id: return True
     else:
