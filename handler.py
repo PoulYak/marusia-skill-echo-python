@@ -28,7 +28,7 @@ def handler_function(req_mess):
     session = req_mess['session']
     request = req_mess['request']
     list_of_tok = request['nlu']['tokens']
-    print('||||||||||||||||||||||||',exercises)
+    print('||||||||||||||||||||||||', exercises)
     if session['new'] or state == 0:
         with open('upr.txt') as fin:
             exercises = fin.readlines()
@@ -40,23 +40,24 @@ def handler_function(req_mess):
         message = 'Отлично, начнем\n'
         state = 2
     if state == 2 and exercises:
-        if (
-                "следующее" in list_of_tok or "следующий" in list_of_tok or "следующая" in list_of_tok or "сделал" in list_of_tok or "сделала" in list_of_tok or "сделали" in list_of_tok) or (
+        if ("следующее" in list_of_tok or "следующий" in list_of_tok or "следующая" in list_of_tok or "сделал" in list_of_tok or "сделала" in list_of_tok or "сделали" in list_of_tok) or (
                 'разминка' in list_of_tok or 'разминку' in list_of_tok):
             ind = randint(0, len(exercises) - 1)
             exercise_name, exercises_description = exercises[ind].split(';')
             exercises.pop(ind)
             message += exercise_name
-            buttons = [button('Следующее'), button('Как делать')]
-            print(state)
+            buttons = [button('Следующее'), button('Что делать')]
+            # print(state)
 
         else:
             message = exercises_description
-    elif state == 2 and not exercises and not next(list_of_tok):
-        message += 'Поздравляю, тренировка сделана'
-        end_session = True
+            buttons = [button('Сделал')]
     elif stupid(list_of_tok):
-        message = exercises_description
+            message = exercises_description
+    elif state == 2 and not exercises:  # and not next(list_of_tok):
+        message += '\nПоздравляю, тренировка сделана'
+        end_session = True
+
 
 
     response_message = {
@@ -78,7 +79,7 @@ def button(title):
     return {"title": title}
 
 def stupid(word_list):
-    if 'как' in word_list and 'делать' in word_list:
+    if 'что' in word_list and 'делать' in word_list:
         return True
     return False
 
