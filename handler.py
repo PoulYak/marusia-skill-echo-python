@@ -46,7 +46,7 @@ def handler_function(req_mess):
             exercise_name, exercises_description = exercises[ind].split(';')
             exercises.pop(ind)
             message += exercise_name
-            buttons = [button('Следующее'), button('Что делать')]
+            buttons = [button('Следующее'), button('Как делать')]
             # print(state)
 
         else:
@@ -54,6 +54,7 @@ def handler_function(req_mess):
             buttons = [button('Сделал')]
     elif stupid(list_of_tok):
             message = exercises_description
+            buttons = [button('Сделал')]
     elif state == 2 and not exercises:  # and not next(list_of_tok):
         message += '\nПоздравляю, тренировка сделана'
         end_session = True
@@ -79,7 +80,7 @@ def button(title):
     return {"title": title}
 
 def stupid(word_list):
-    if 'что' in word_list and 'делать' in word_list:
+    if 'как' in word_list and 'делать' in word_list:
         return True
     return False
 
