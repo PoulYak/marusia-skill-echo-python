@@ -1,5 +1,5 @@
 import json
-from random import randint
+from random import randint, shuffle
 
 
 def webhook(event, context):
@@ -29,6 +29,8 @@ def handler_function(req_mess):
     if session['new'] or state == 0:
         with open('upr.txt') as fin:
             exercises = fin.readlines()
+            shuffle(exercises)
+            exercises = exercises[:5]
         message = 'Вы на тренажере Маруся, поздравляю, выберите тип тренировок'
         buttons = [button('Разминка'), button('Комплекс на день')]
         state = 1
