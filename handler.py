@@ -3,9 +3,10 @@ import json
 
 def webhook(event, context):
     request_message = json.loads(event['body'])
+    response = handler_function(request_message)
     return {
         "statusCode": 200,
-        "body": json.dumps(handler_function(request_message))
+        "body": json.dumps(response)
     }
 
 
@@ -13,19 +14,24 @@ state = 0
 
 
 def handler_function(req_mess):
+    print(req_mess)
     global state
     buttons = []
     end_session = False
     message = ''
     session = req_mess['session']
     request = req_mess['request']
-    print(request)
-
+    list_of_tok = request['command']
     if session['new'] or state == 0:
 
         message = 'Вы на тренажере Маруся, поздравляю, выберите тип тренировок'
         buttons = [button('Разовая тренировка'), button('Комплекс на день')]
         state = 1
+    print("/////////////////////////////////////////////////////////////////////",list_of_tok)
+    if 'разовую' in list_of_tok or 'единоразовую' in list_of_tok or 'разовая' in list_of_tok or 'единоразовая' in list_of_tok or 'одноразовая' in list_of_tok or 'одноразовую' in list_of_tok or 'розовая' in list_of_tok or 'розовую' in list_of_tok:
+        message = 'Отлично, начнем'
+        state = 2
+
 
     response_message = {
         "response": {
