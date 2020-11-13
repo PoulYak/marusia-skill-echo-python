@@ -65,11 +65,15 @@ def handler_function(req_mess):
             "tts": message,
             "buttons": buttons,
             "end_session": end_session
-        },
+            },  
         "session": {derived_key: req_mess['session'][derived_key] for derived_key in
                     ['session_id', 'user_id', 'message_id']},
         "version": req_mess['version']
     }
+
+    user_id = response_message["session"]["user_id"]
+    check_user(user_id)
+
     print(response_message)
     return response_message
 
@@ -77,6 +81,7 @@ def handler_function(req_mess):
 def button(title):
     return {"title": title}
 
+<<<<<<< HEAD
 def stupid(word_list):
     if 'как' in word_list and 'делать' in word_list:
         return True
@@ -87,3 +92,17 @@ def next(word_list):
     if "следующее" in word_list or "следующий" in word_list or "следующая" in word_list or "сделал" in word_list or "сделала" in word_list or "сделали" in word_list or "готов" in word_list or "готовы" in word_list or "готовим" in word_list or "готова" in word_list or "готово" in word_list or "всё":
         return True
     return False
+=======
+
+def check_user(user_id):
+    with open('users_id.txt') as fin:
+        users_id = fin.readlines()
+
+    if user_id in users_id: return True
+    else:
+        with open('users_id.txt', 'a') as fout:
+            print(user_id, file = fout)
+        return False
+
+
+>>>>>>> test
