@@ -58,8 +58,8 @@ def check_user(user_id):
 
     if user_id in users_id: return True
     else:
-    with open('users_id.txt', 'w') as fout:
-        print(user_id, file = fout)
-    return False
+        with open('users_id.txt', 'a') as fout:
+            print(user_id, file = fout)
+        return False
 
 
