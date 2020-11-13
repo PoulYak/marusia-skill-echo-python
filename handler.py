@@ -28,20 +28,21 @@ def handler_function(req_mess):
     session = req_mess['session']
     request = req_mess['request']
     list_of_tok = request['nlu']['tokens']
+    print('||||||||||||||||||||||||',exercises)
     if session['new'] or state == 0:
         with open('upr.txt') as fin:
             exercises = fin.readlines()
         message = 'Вы на тренажере Маруся, поздравляю, выберите тип тренировок'
-        buttons = [button('Разовая тренировка'), button('Комплекс на день')]
+        buttons = [button('Разминка'), button('Комплекс на день')]
         state = 1
     elif state == 1 and (
-            'разовую' in list_of_tok or 'единоразовую' in list_of_tok or 'разовая' in list_of_tok or 'единоразовая' in list_of_tok or 'одноразовая' in list_of_tok or 'одноразовую' in list_of_tok or 'розовая' in list_of_tok or 'розовую' in list_of_tok):
+            'разминка' in list_of_tok or 'разминку' in list_of_tok ):
         message = 'Отлично, начнем\n'
         state = 2
-    elif state == 2 and exercises:
+    if state == 2 and exercises:
         if (
                 "следующее" in list_of_tok or "следующий" in list_of_tok or "следующая" in list_of_tok or "сделал" in list_of_tok or "сделала" in list_of_tok or "сделали" in list_of_tok) or (
-                'разовую' in list_of_tok or 'единоразовую' in list_of_tok or 'разовая' in list_of_tok or 'единоразовая' in list_of_tok or 'одноразовая' in list_of_tok or 'одноразовую' in list_of_tok or 'розовая' in list_of_tok or 'розовую' in list_of_tok):
+                'разминка' in list_of_tok or 'разминку' in list_of_tok):
             ind = randint(0, len(exercises) - 1)
             exercise_name, exercises_description = exercises[ind].split(';')
             exercises.pop(ind)
